@@ -121,7 +121,8 @@ dmypy.json
 .LSOverride
 
 # Icon must end with two \r
-Icon
+Icon
+
 
 # Thumbnails
 ._*
@@ -143,3 +144,29 @@ Temporary Items
 .apdisk
 
 
+*.pyc
+*.class
+ngrok
+*.xml
+# don't include third-party dependencies.
+!lib/README.md
+Test.java
+results/
+experiments/
+notebooks/
+temp/
+ideas/
+log/
+model_data/
+data/
+conf.py
+config
+nohup.out
+dump.rdb
+*.out
+load_test.py
+out/
+*.ipynb
+*.iml
+.firebase/
+functions/node_modules/

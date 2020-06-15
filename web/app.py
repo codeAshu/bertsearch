@@ -1,11 +1,9 @@
-import os
 from pprint import pprint
 
 from flask import Flask, render_template, jsonify, request
 from elasticsearch import Elasticsearch
 from bert_serving.client import BertClient
 SEARCH_SIZE = 10
-INDEX_NAME = os.environ['INDEX_NAME']
 app = Flask(__name__)
 
 
@@ -20,6 +18,7 @@ def analyzer():
     client = Elasticsearch('elasticsearch:9200')
 
     query = request.args.get('q')
+    index_name = request.args.get('index')
     query_vector = bc.encode([query])[0]
 
     script_query = {
@@ -33,7 +32,7 @@ def analyzer():
     }
 
     response = client.search(
-        index=INDEX_NAME,
+        index=index_name,
         body={
             "size": SEARCH_SIZE,
             "query": script_query,
