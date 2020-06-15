@@ -73,7 +73,8 @@
       },
       methods: {
         search() {
-          axios.get(`${base_url}search?q=${this.query}`).then(response => {
+        //later make this modular , index key is fetched from browser. would help in testing results
+          axios.get(`${base_url}search?q=${this.query}&index=invest_v1`).then(response => {
             this.result = response.data;
           })
         },
