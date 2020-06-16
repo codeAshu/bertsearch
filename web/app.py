@@ -36,7 +36,7 @@ def analyzer():
         body={
             "size": SEARCH_SIZE,
             "query": script_query,
-            "_source": {"includes": ["title", "text"]}
+            "_source": {"includes": ["title", "text", "s", "e"]}
         }
     )
     print(query)
