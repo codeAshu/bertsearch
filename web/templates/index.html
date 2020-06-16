@@ -38,7 +38,7 @@
             <template v-if="'hits' in result">
               <v-card max-width="700" flat v-for="(item, index) in result.hits.hits" :key="index">
                 <v-card-title>[[ item._source.title ]]</v-card-title>
-                <v-card-text>[[ item._source.text) ]]...</v-card-text>
+                <v-card-text>[[ item._source.text ]]...</v-card-text>
                 <v-card-actions>
                   <v-chip class="primary">[[ item._score ]]</v-chip>
                   <v-chip class="primary">[[ item._id ]]</v-chip>
